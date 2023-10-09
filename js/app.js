@@ -1,4 +1,5 @@
 let carrinho = [];
+let valorTotal = [];
 
 function exibirTextoNaTela(tag, texto){
     let campo = document.getElementById(tag);
@@ -14,22 +15,21 @@ function carrinhoZerado() {
 function adicionar() {
     let produto = document.querySelector("select").value;
     let quantidade = document.querySelector("input").value;
-    let adicionar = carrinho.push(produto);
+    let item = produto.split(" - R$");
+    let adicionarItem = carrinho.push(`${quantidade}x ${item[0]}`);
+    let valor = item[1] * quantidade;
+    let adicionaValor = valorTotal.push(valor);
 
-    if(quantidade > 1){
-        adicionar * quantidade;
-    }else{
-        adicionar
+    console.log(carrinho, valorTotal);
+    exibirTextoNaTela(`valor-total`, `R$${valorTotal}`)
     }
-        
-    console.log(carrinho);
     
-    console.log(`${quantidade}x de ${produto}`);
-}
+    //console.log(`${quantidade}x de ${produto}`);
 
 
 function limpar(){
     carrinho = [];
+    valorTotal = [];
     carrinhoZerado();
     console.log(carrinho);
 }
