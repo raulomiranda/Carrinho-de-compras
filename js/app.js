@@ -1,6 +1,15 @@
 let carrinho = [];
 
+function exibirTextoNaTela(tag, texto){
+    let campo = document.getElementById(tag);
+    campo.innerHTML = texto;
+}
 
+function carrinhoZerado() {
+    exibirTextoNaTela("valor-total", "")
+    exibirTextoNaTela("lista-produtos", "Carrinho vazio")
+}
+//carrinhoZerado()
 
 function adicionar() {
     let produto = document.querySelector("select").value;
@@ -20,6 +29,7 @@ function adicionar() {
 
 
 function limpar(){
-    carrinho = []
-    console.log(carrinho)
+    carrinho = [];
+    carrinhoZerado();
+    console.log(carrinho);
 }
