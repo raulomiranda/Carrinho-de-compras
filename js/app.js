@@ -25,6 +25,7 @@ function adicionar() {
     <span class="texto-azul"> ${quantidade}x </span> ${item[0]} <span class="texto-azul">R$${valor}</span>
     </section>`);
     exibirTextoNaTela(`valor-total`, `R$${somaValorTotal}`);
+    document.querySelector("input").value = "";
 
 }
 
